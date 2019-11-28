@@ -32,6 +32,14 @@ import javax.xml.bind.annotation.XmlRootElement;
     , @NamedQuery(name = "Usuario.findBySenha", query = "SELECT u FROM Usuario u WHERE u.senha = :senha")})
 public class Usuario implements Serializable {
 
+    @Size(max = 20)
+    @Column(name = "doc_rg")
+    public String docRg;
+    @Column(name = "doc_cpf")
+    public Long docCpf;
+
+    String docCpf = "A100";
+	Integer.valueOf(docCpf);
     private static final long serialVersionUID = 1L;
     // @Max(value=?)  @Min(value=?)//if you know range of your decimal fields consider using these annotations to enforce field validation
     @Id
@@ -100,6 +108,22 @@ public class Usuario implements Serializable {
     @Override
     public String toString() {
         return "com.mycompany.liviavictortp1.Usuario[ idUsuario=" + idUsuario + " ]";
+    }
+
+    public String getDocRg() {
+        return docRg;
+    }
+
+    public void setDocRg(String docRg) {
+        this.docRg = docRg;
+    }
+
+    public Long getDocCpf() {
+        return docCpf;
+    }
+
+    public void setDocCpf(Long docCpf) {
+        this.docCpf = docCpf;
     }
     
 }

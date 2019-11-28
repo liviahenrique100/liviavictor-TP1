@@ -24,3 +24,10 @@ CREATE SEQUENCE public.sq_usuario;
 ALTER TABLE public.sq_usuario
   OWNER TO postgres;
 
+﻿UPDATE public.usuario
+   SET id= ?, nome=?, email= ?, senha= ?
+ WHERE <condition>;
+ ALTER TABLE public.usuario
+	ADD COLUMN doc_rg character varying(20);
+ ALTER TABLE public.usuario
+	ADD COLUMN doc_cpf numeric(11, 0);
